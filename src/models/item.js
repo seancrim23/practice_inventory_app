@@ -13,14 +13,23 @@ const itemSchema = new Schema({
         min: 0,
         default: 0
     },
-    location: {
-        type: String,
-        trim: true
+    floor: {
+        type: Number,
+        required: true
+    },
+    aisle: {
+        type: Number,
+        required: true
     },
     price: {
         type: Number,
         min: 0,
         required: true
+    },
+    dateAdded: {
+        type: Date,
+        required: true,
+        default: new Date()
     }
 });
 

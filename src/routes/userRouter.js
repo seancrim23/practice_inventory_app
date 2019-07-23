@@ -9,7 +9,7 @@ userRouter.post('/user', async (req, res) => {
 
     try{
         await user.save();
-        await user.generateAuthToken();
+        const token = await user.generateAuthToken();
         res.status(201).send({ user, token });
     }catch(e){
         res.status(500).send(e.stack);
